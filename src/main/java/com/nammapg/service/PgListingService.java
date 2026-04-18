@@ -100,6 +100,7 @@ public class PgListingService {
                 .parkingAvailable(request.getParkingAvailable())
                 .description(request.getDescription())
                 .images(request.getImages())
+                .customAmenities(request.getCustomAmenities())
                 .contactNumber(request.getContactNumber())
                 .latitude(request.getLatitude())
                 .longitude(request.getLongitude())
@@ -202,6 +203,7 @@ public class PgListingService {
         if (req.getParkingAvailable() != null) pg.setParkingAvailable(req.getParkingAvailable());
         if (req.getDescription() != null) pg.setDescription(req.getDescription());
         if (req.getImages() != null) pg.setImages(req.getImages());
+        if (req.getCustomAmenities() != null) pg.setCustomAmenities(req.getCustomAmenities());
         if (req.getContactNumber() != null) pg.setContactNumber(req.getContactNumber());
         if (req.getLatitude() != null) pg.setLatitude(req.getLatitude());
         if (req.getLongitude() != null) pg.setLongitude(req.getLongitude());
@@ -234,6 +236,7 @@ public class PgListingService {
                 .parkingAvailable(pg.getParkingAvailable())
                 .description(pg.getDescription())
                 .images(pg.getImages())
+                .customAmenities(pg.getCustomAmenities())
                 .contactNumber(pg.getContactNumber())
                 .verified(pg.getVerified())
                 .available(pg.getAvailable())

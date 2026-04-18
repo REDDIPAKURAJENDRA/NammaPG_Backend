@@ -25,4 +25,3 @@ com\nammapg\repository\PgListingRepository.class
 com\nammapg\model\PgListing.class
 com\nammapg\dto\PgListingResponse$PgListingResponseBuilder.class
 com\nammapg\dto\AuthResponse$AuthResponseBuilder.class
-com\nammapg\controller\OwnerPgController.class
