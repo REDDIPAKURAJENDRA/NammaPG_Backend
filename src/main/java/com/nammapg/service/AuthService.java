@@ -20,8 +20,22 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
     private final AuthenticationManager authenticationManager;
+    private final EmailService emailService;
+    private final OtpService otpService;
+
+    public void sendRegistrationOtp(String email, String name) {
+        if (userRepository.existsByEmail(email)) {
+            throw new RuntimeException("Email already registered");
+        }
+        String otp = otpService.generateOtp(email);
+        emailService.sendOtpEmail(email, name, otp);
+    }
 
     public AuthResponse registerOwner(RegisterRequest request) {
+        if (!otpService.verifyOtp(request.getEmail(), request.getOtp())) {
+            throw new RuntimeException("Invalid or expired OTP");
+        }
+
         if (userRepository.existsByEmail(request.getEmail())) {
             throw new RuntimeException("Email already registered");
         }
