@@ -42,6 +42,7 @@ public class PgListingRequest {
 
     private String description;
     private List<String> images;
+    private List<String> customAmenities;
 
     @NotBlank
     private String contactNumber;

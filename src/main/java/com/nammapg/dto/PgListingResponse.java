@@ -32,6 +32,7 @@ public class PgListingResponse {
     private Boolean parkingAvailable;
     private String description;
     private List<String> images;
+    private List<String> customAmenities;
     private String contactNumber;
     private Boolean verified;
     private Boolean available;

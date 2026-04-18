@@ -41,6 +41,7 @@ public class PgListing {
 
     private String description;
     private List<String> images;
+    private List<String> customAmenities;
     private String contactNumber;
 
     @Builder.Default
